@@ -150,7 +150,7 @@ pushd() {
 }
 
 qp() {
-  local pacman=$(type -p pacman-color || type -p pacman)
+  local pacman=$(type -P pacman-color || type -P pacman)
   local res=($($pacman -Qsq $1))
   (( ${#res[@]} == 0 )) && { echo "No local results for '$1'. Searching syncs..."; $pacman -Ss $1; return; }
   (( ${#res[@]} == 1 )) && $pacman -Qi ${res[0]} || $pacman -Qs $1

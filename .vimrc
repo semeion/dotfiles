@@ -41,7 +41,7 @@ set virtualedit=all
 set wildmenu
 set wildmode=list:longest,full
 
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 
 filetype plugin indent on
 
@@ -173,8 +173,4 @@ let vala_space_errors = 1
 let vala_no_trail_space_error = 1
 let vala_no_tab_space_error = 1
 let vala_minlines = 120
-
-" Mutt
-"--------------------------------
-au BufRead,BufNew ~/.mutt/tmp/mutt* so ~/.mutt/mutt.vim
 

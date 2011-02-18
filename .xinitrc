@@ -1,7 +1,6 @@
 # graphical/display tweaking
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 xset +dpms +fp /usr/share/fonts/local,/usr/share/fonts/artwiz-fonts
-feh --bg-scale $(randomWallpaper)
 xscreensaver -no-splash &
 nvidia-settings -l
 wmname LG3D
@@ -11,8 +10,26 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xset r rate 220 45
 xsetroot -cursor_name left_ptr
 
+<<<<<<< HEAD
 # the lack of terminals here is intentional. see ~/bin/startdwm
 { sleep 1; chromium; } &
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/bin/startdwm
+xmodmap ~/.xmodmaprc
+
+# autostart
+{ sleep 1; chromium; } & # delay prevents start prior to xcompmgr
+urxvtd -q -o -f
+urxvtc -name tmux -geometry 122x77 -e tmux -L main attach
+urxvtc -name htop -e htop
+urxvtc -name werk
+
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# i'm running a reparenting WM, honest!
+wmname LG3D
+
+nvidia-settings -l
+
+exec ck-launch-session ~/bin/startdwm
 
