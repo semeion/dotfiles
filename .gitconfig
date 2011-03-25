@@ -1,10 +1,6 @@
 [user]
-	name = Dave Reisner
-	email = d@falconindy.com
-
-[github]
-	user = falconindy
-	token = 4600a53bb98141ea937908ef3c2f632
+  name = Dave Reisner
+  email = d@falconindy.com
 
 [sendemail]
   smtpserver = /usr/sbin/dma
@@ -27,17 +23,15 @@
   grep = yes
 
 [merge]
-	tool = vimdiff
-	log = true
+  tool = vimdiff
+  log = true
 
 [push]
-	default = current
+  default = current
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [branch "master"]
-	remote = origin
-	merge = master
-
-# vim: set noet:
+  remote = origin
+  merge = master
