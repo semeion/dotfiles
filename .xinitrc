@@ -10,12 +10,13 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xset r rate 220 45
 xsetroot -cursor_name left_ptr
 
-<<<<<<< HEAD
 # the lack of terminals here is intentional. see ~/bin/startdwm
 { sleep 1; chromium; } &
 
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ~/bin/startdwm
-xmodmap ~/.xmodmaprc
+if [[ ! -e /dev/input/by-id/usb-Topre_Corporation_HHKB_Professional-event-kbd ]]; then
+  xmodmap ~/.xmodmaprc
+fi
 
 # autostart
 { sleep 1; chromium; } & # delay prevents start prior to xcompmgr
@@ -31,5 +32,6 @@ wmname LG3D
 
 nvidia-settings -l
 
-exec ck-launch-session ~/bin/startdwm
+exec ~/bin/startdwm
+
 
