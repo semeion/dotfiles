@@ -10,8 +10,5 @@ export PAGER=less
 export PATH=~/bin:$PATH
 export CDPATH=.:~/
 
-# local daemons
-eval $(keychain --eval id_rsa)
-
 # if interactive, source .bashrc
 [[ -n $PS1 && -f ~/.bashrc ]] && . ~/.bashrc
